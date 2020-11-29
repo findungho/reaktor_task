@@ -1,0 +1,11 @@
+<header>
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="{{ url_for('html_view.index') }}" class="nav-link {% if index %}active{% endif %}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('html_view.jackets') }}" class="nav-link {% if jackets %}active{% endif %}">Jackets</a></li>
+            <li class="nav-item"><a href="{{ url_for('html_view.shirts') }}" class="nav-link {% if shirts %}active{% endif %}">Shirts</a></li>
+            <li class="nav-item"><a href="{{ url_for('html_view.accessories') }}" class="nav-link {% if accessories %}active{% endif %}">Accessories</a></li>
+        </ul>
+    </nav>
+    <hr style="clear:both">
+</header>

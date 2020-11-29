@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <h3>{{ product }} Stock</h3>
+    <p>Check out the quantity of the {{ product }}.</p>
+
+    {{ pagination.links }}
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <col width="10%">
+            <col width="40%">
+            <col width="2%">
+            <col width="2%">
+            <col width="10%">
+            <col width="10%">
+            <col width="16%">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th class="color-style" scope="col" colspan="2">Color</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Availability</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+            <!-- Construct the rest of courses here -->
+            {% for item in items %}
+            <tr>
+                <td scope="row">{{ loop.index + pagination.skip }}</td>
+                <td class="item-name" scope='row'>{{ item.name }}</td>
+                <td scope="row" style="background: {{ item.color[0] }};"></td>
+                <td scope="row" style="background: {{ item.color[1] }};"></td>
+                <td scope="row">{{ item.price }}</td>
+                <td scope="row">{{ item.manufacturer }}</td>
+                <td scope="row">{{ item.availability }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {{ pagination.links }}
+</div>
+{% endblock %}
